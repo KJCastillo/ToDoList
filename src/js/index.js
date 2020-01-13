@@ -8,9 +8,17 @@ import "bootstrap";
 //include your index.scss file into the bundle
 import "../styles/index.scss";
 
-function ToDoList() {
-	return <h1>To Do List</h1>;
-}
+// state = { value: "" };
 
+class ToDoList extends React.Component {
+	render() {
+		return (
+			<div>
+				<h1 className="title">To Do List</h1>
+				<input className="input" />
+			</div>
+		);
+	}
+}
 //render your react application
 ReactDOM.render(<ToDoList />, document.querySelector("#app"));
