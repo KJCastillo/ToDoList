@@ -1,27 +1,18 @@
 import React, { useState } from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
 //create your first component
 
 export const ToDoList = () => {
-	const [todo, setTodo] = useState(["Drive the car", "Wash the turtle"]);
-	const [obj, setObj] = useState([
-		{ todo: "Drive the car" },
-		{ todo: "Wash the turtle" }
-	]);
+	const [todo, setTodo] = useState([]);
 	const [input, setInput] = useState();
 	function addTodo(todos) {
 		setTodo([...todo, todos]);
 	}
-	function addObj(todos) {
-		setObj([{ ...obj, todo: todos }]);
-	}
+
 	return (
 		<div className="container">
 			<div className="row">
-				<h1>Todo</h1>
+				<h1>To Do List</h1>
 			</div>
 			<div className="row">
 				{" "}
@@ -30,15 +21,13 @@ export const ToDoList = () => {
 						onChange={e => setInput(e.target.value)}
 						type="text"
 						className="form-control"
-						placeholder="Recipient's username"
-						aria-label="Recipient's username"
+						placeholder="Enter New Task"
+						aria-label="Enter New Task"
 						aria-describedby="button-addon2"
 					/>
 					<div className="input-group-append">
 						<button
-							onClick={
-								(() => addTodo(input), () => addObj(input))
-							}
+							onClick={() => addTodo(input)}
 							className="btn btn-outline-secondary"
 							type="button"
 							id="button-addon2">
@@ -50,14 +39,24 @@ export const ToDoList = () => {
 			<div className="row">
 				<ul>
 					{todo.map((item, index) => {
-						return <li key={index}>{item}</li>;
-					})}
-				</ul>
-			</div>
-			<div className="row">
-				<ul>
-					{obj.map((item, index) => {
-						return <li key={index}>{item.todo}</li>;
+						return (
+							<li key={index}>
+								{item}{" "}
+								<button
+									onClick={() => {
+										let del = todo.filter((el, index) => {
+											return (
+												index !==
+												todo.indexOf(todo[index])
+											);
+										});
+
+										setTodo([del]);
+									}}>
+									delete
+								</button>
+							</li>
+						);
 					})}
 				</ul>
 			</div>
