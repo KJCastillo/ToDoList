@@ -45,9 +45,7 @@ export const ToDoList = () => {
 								<button
 									onClick={() => {
 										let del = todo.filter((el, id) => {
-											return (
-												index !== todo.indexOf(todo[id])
-											);
+											return index !== id;
 										});
 										setTodo([...del]);
 									}}>
