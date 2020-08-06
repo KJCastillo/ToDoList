@@ -12,7 +12,7 @@ export const ToDoList = () => {
 	return (
 		<div className="container">
 			<div className="row">
-				<h1>To Do List</h1>
+				<h1 className="pt-4">To Do List</h1>
 			</div>
 			<div className="row">
 				{" "}
@@ -28,7 +28,7 @@ export const ToDoList = () => {
 					<div className="input-group-append">
 						<button
 							onClick={() => addTodo(input)}
-							className="btn btn-outline-secondary"
+							className="btn btn-secondary"
 							type="button"
 							id="button-addon2">
 							Add
@@ -43,13 +43,14 @@ export const ToDoList = () => {
 							<li key={index}>
 								{item}{" "}
 								<button
+									className="btn btn-secondary btn-sm ml-1"
 									onClick={() => {
 										let del = todo.filter((el, id) => {
 											return index !== id;
 										});
 										setTodo([...del]);
 									}}>
-									delete
+									done
 								</button>
 							</li>
 						);
