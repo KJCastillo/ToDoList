@@ -43,7 +43,7 @@ export const ToDoList = () => {
 							<li key={index}>
 								{item}{" "}
 								<button
-									className="btn btn-secondary btn-sm ml-1"
+									className="btn btn-secondary btn-sm ml-1 mb-1"
 									onClick={() => {
 										let del = todo.filter((el, id) => {
 											return index !== id;
