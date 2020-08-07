@@ -19,6 +19,11 @@ export const ToDoList = () => {
 				<div className="input-group mb-3">
 					<input
 						onChange={e => setInput(e.target.value)}
+						onKeyPress={event => {
+							if (event.key === "Enter") {
+								addTodo(input);
+							}
+						}}
 						type="text"
 						className="form-control"
 						placeholder="Enter New Task"
@@ -29,7 +34,7 @@ export const ToDoList = () => {
 						<button
 							onClick={() => addTodo(input)}
 							className="btn btn-secondary"
-							type="button"
+							type="submit"
 							id="button-addon2">
 							Add
 						</button>
