@@ -11,3 +11,15 @@ body {
     background: lightblue;
 }
 
+.container {
+    position: relative;
+}
+
+.child {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px; /* apply negative top and left margins to truly center the element */
+}
