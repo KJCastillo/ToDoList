@@ -11,6 +11,6 @@ export const DateTime = () => {
 	}, []);
 
 	return (
-		<h4>{`${dateTime.toLocaleDateString()} ${dateTime.toLocaleTimeString()}`}</h4>
+		<h4 className="date">{`${dateTime.toLocaleDateString()} ${dateTime.toLocaleTimeString()}`}</h4>
 	);
 };
