@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { DateTime } from "./date";
 //create your first component
 
 export const ToDoList = () => {
@@ -14,6 +14,7 @@ export const ToDoList = () => {
 			<div className="child">
 				<div className="row">
 					<h1 className="pt-4">To Do List</h1>
+					<DateTime />
 				</div>
 				<div className="row">
 					{" "}
