@@ -8,9 +8,9 @@ export const ToDoList = () => {
 
 	function addTodo(todos) {
 		setTodo([...todo, todos]);
-    }
-    
-    //function resetState() {    }
+	}
+
+	//function resetState() {    }
 
 	return (
 		<div className="container">
